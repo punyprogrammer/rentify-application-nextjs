@@ -4,7 +4,11 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
+import { authMiddleware } from "./middlewares/authMiddleware";
 // Route import
+import tenantRoutes from "./routes/tenantRoutes";
+import managerRoutes from "./routes/managerRoutes";
+
 // configurations
 // Load environment variables from a .env file into process.env
 // Useful for keeping secrets like API keys and DB credentials out of your codebase
@@ -39,6 +43,9 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("This is home route");
 });
+// tenant
+app.use("/tenants", authMiddleware(["tenant"]), tenantRoutes);
+app.use("/tenants", authMiddleware(["manager"]), managerRoutes);
 
 // Server
 const port = process.env.PORT || 3002;
