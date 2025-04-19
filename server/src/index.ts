@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
 });
 // tenant
 app.use("/tenants", authMiddleware(["tenant"]), tenantRoutes);
-app.use("/tenants", authMiddleware(["manager"]), managerRoutes);
+app.use("/managers", authMiddleware(["manager"]), managerRoutes);
 
 // Server
 const port = process.env.PORT || 3002;
