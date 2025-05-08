@@ -9,3 +9,5 @@
 https://github.com/punyprogrammer/rentify-application-nextjs/pull/6
 ### 7.Backend add tenant ,properties ,controllers
 https://github.com/punyprogrammer/rentify-application-nextjs/pull/7
+### 8.Add lease and application controlleres
+https://github.com/punyprogrammer/rentify-application-nextjs/pull/8
