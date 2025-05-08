@@ -8,6 +8,9 @@ import { authMiddleware } from "./middlewares/authMiddleware";
 // Route import
 import tenantRoutes from "./routes/tenantRoutes";
 import managerRoutes from "./routes/managerRoutes";
+import applicationRoutes from "./routes/applicationRoutes";
+import propertyRoutes from "./routes/propertyRoutes";
+import leaseRoutes from "./routes/leaseRoutes";
 
 // configurations
 // Load environment variables from a .env file into process.env
@@ -44,8 +47,12 @@ app.get("/", (req, res) => {
   res.send("This is home route");
 });
 // tenant
+app.use("/applications", applicationRoutes);
+app.use("/properties", propertyRoutes);
+app.use("/leases", leaseRoutes);
 app.use("/tenants", authMiddleware(["tenant"]), tenantRoutes);
 app.use("/managers", authMiddleware(["manager"]), managerRoutes);
+
 
 // Server
 const port = process.env.PORT || 3002;
