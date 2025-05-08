@@ -7,3 +7,5 @@
 
 ### 6.Create Tenant and Manager Settings 
 https://github.com/punyprogrammer/rentify-application-nextjs/pull/6
+### 7.Backend add tenant ,properties ,controllers
+https://github.com/punyprogrammer/rentify-application-nextjs/pull/7
